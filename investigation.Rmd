@@ -5,7 +5,14 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-**Note:** You can use this file as you 'working document' where you can try out various investigation ideas and keep notes about your findings. How you use and structure this file is up to you. It is recommended that you keep notes about what you are investigating and what you find as this will make the process of creating your presentation and report easier. Please note that you _do not_ need to submit this file as part of your group project.
+- road and alley access - filter to check if both needed - remove alley if not needed 
+
+- basement columns probably remove 
+
+- most important columns to focus on: years built and remodelled
+
+- potential question: what is the most influential variable that influences house prices in Iowa: 
+--> possible variables that this could consider: remodelling, neighbourhood, condition of various features of the house, size of house
 
 
 
