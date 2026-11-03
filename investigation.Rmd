@@ -14,6 +14,8 @@ output: html_document
 - potential question: what is the most influential variable that influences house prices in Iowa: 
 --> possible variables that this could consider: remodelling, neighbourhood, condition of various features of the house, size of house
 
+- original data set size: 82 variables, 2930 observations 
+
 
 
 ```{r setup, include=FALSE}
