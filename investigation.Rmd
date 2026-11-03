@@ -15,6 +15,10 @@ output: html_document
 --> possible variables that this could consider: remodelling, neighbourhood, condition of various features of the house, size of house
 
 - original data set size: 82 variables, 2930 observations 
+- central area = SWISSU, College Creek, Edwards, Old Town, IDOTRR, Brookside, Crawford 
+- count SWISSU = 48, count College Creek = 267, count Edwards = 194, count Old Town = 239, count IDOTRR = 93, count Brookside = 108, count Crawford = 103
+code: House_data_iowa %>% count(Neighborhood) %>% 
++         print(n=28)
 
 
 

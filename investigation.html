@@ -368,11 +368,27 @@ influences house prices in Iowa: –&gt; possible variables that this
 could consider: remodelling, neighbourhood, condition of various
 features of the house, size of house</p></li>
 <li><p>original data set size: 82 variables, 2930 observations</p></li>
+<li><p>central area = SWISSU, College Creek, Edwards, Old Town, IDOTRR,
+Brookside, Crawford</p></li>
+<li><p>count SWISSU = 48, count College Creek = 267, count Edwards =
+194, count Old Town = 239, count IDOTRR = 93, count Brookside = 108,
+count Crawford = 103 code: House_data_iowa %&gt;% count(Neighborhood)
+%&gt;%</p></li>
+<li><pre><code>    print(n=28)</code></pre></li>
 </ul>
 <pre class="r"><code>library(tidyverse)
 # Add any other libraries here</code></pre>
 <pre class="r"><code># load your data 
-library(readr)</code></pre>
+library(readr)
+House_data_iowa &lt;-read_csv(&quot;House data iowa.csv&quot;)</code></pre>
+<pre><code>## Rows: 2930 Columns: 82
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (43): MS.Zoning, Street, Alley, Lot.Shape, Land.Contour, Utilities, Lot....
+## dbl (39): Order, PID, area, price, MS.SubClass, Lot.Frontage, Lot.Area, Over...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 
 
 
