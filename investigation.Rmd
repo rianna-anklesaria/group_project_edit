@@ -34,7 +34,8 @@ library(tidyverse)
 
 ```{r load-data}
 # load your data 
-
+library(readr)
+House_data_iowa <- read_csv("House data iowa.csv")
 
 
 
