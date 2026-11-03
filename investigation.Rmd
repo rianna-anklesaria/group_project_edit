@@ -43,9 +43,6 @@ library(tidyverse)
 library(readr)
 House_data_iowa <-read_csv("House data iowa.csv")
 
-
-
-
 ```
 
 
