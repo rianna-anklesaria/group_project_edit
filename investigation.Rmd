@@ -11,8 +11,8 @@ output: html_document
 
 - most important columns to focus on: years built and remodelled
 
-- potential question: what is the most influential variable that influences house prices in Iowa: 
---> possible variables that this could consider: remodelling, neighbourhood, condition of various features of the house, size of house
+- potential question: what is the most influential variable that influences finished house prices in central Amestown (Iowa): - can change to sepcific relationships
+--> possible variables that this could consider: period of remodelling, condition of various features of the house - quality ratings overall quality overall condition etc., size of house - unfinished/ outliers, when originally built
 
 - original data set size: 82 variables, 2930 observations 
 - central area = SWISSU, College Creek, Edwards, Old Town, IDOTRR, Brookside, Crawford 
