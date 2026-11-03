@@ -43,6 +43,13 @@ library(tidyverse)
 library(readr)
 House_data_iowa <-read_csv("House data iowa.csv")
 
+
+
+House_data_iowa %>% count(Neighborhood) %>% 
+    print(n=28)
+
+
+
 ```
 
 
