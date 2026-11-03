@@ -376,6 +376,17 @@ count Crawford = 103 code: House_data_iowa %&gt;% count(Neighborhood)
 %&gt;%</p></li>
 <li><pre><code>    print(n=28)</code></pre></li>
 </ul>
+<p>IMPORTANT NOTE FROM DATASET PUBLISHER : SPECIAL NOTES: “There are 5
+observations that an instructor may wish to remove from the data set
+before giving it to students (a plot of SALE PRICE versus GR LIV AREA
+will indicate them quickly). Three of them are true outliers (Partial
+Sales that likely don’t represent actual market values) and two of them
+are simply unusual sales (very large houses priced relatively
+appropriately). I would recommend removing any houses with more than
+4000 square feet from the data set (which eliminates these 5 unusual
+observations) before assigning it to students.” - potentially could
+remove/ acknowlegde outliers = 3 got low price despite larger square
+feet due to being partial sale (lower price than others)</p>
 <pre class="r"><code>library(tidyverse)
 # Add any other libraries here</code></pre>
 <pre class="r"><code># load your data 
