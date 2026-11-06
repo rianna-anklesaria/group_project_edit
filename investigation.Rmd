@@ -49,6 +49,8 @@ central_area_data <- House_data_iowa %>%
 view(central_area_data)
 which(is.na(central_area_data), arr.ind = T)
 
+central_area_data <- central_area_data %>% filter(area < 4000)
+
 
 ```
 
