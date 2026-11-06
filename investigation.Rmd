@@ -47,6 +47,9 @@ House_data_iowa <-read_csv("House data iowa.csv")
 central_area_data <- House_data_iowa %>%
   filter(Neighborhood == c("SWISU", "BrkSide", "CollgCr", "Crawfor", "Edwards", "IDOTRR", "OldTown"))
 view(central_area_data)
+which(is.na(central_area_data), arr.ind = T)
+
+
 ```
 
 
