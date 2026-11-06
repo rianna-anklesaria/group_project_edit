@@ -24,11 +24,6 @@ code: House_data_iowa %>% count(Neighborhood) %>%
 IMPORTANT NOTE FROM DATASET PUBLISHER : SPECIAL NOTES:
 "There are 5 observations that an instructor may wish to remove from the data set before giving it to students (a plot of SALE PRICE versus GR LIV AREA will indicate them quickly). Three of them are true outliers (Partial Sales that likely don’t represent actual market values) and two of them are simply unusual sales (very large houses priced relatively appropriately). I would recommend removing any houses with more than 4000 square feet from the data set (which eliminates these 5 unusual observations) before assigning it to students." - potentially could remove/ acknowlegde outliers = 3 got low price despite larger square feet due to being partial sale (lower price than others)
 
-House_data_iowa %>% count(Neighborhood) %>% 
-    print(n=28)
-
-
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -49,14 +44,9 @@ library(tidyverse)
 library(readr)
 House_data_iowa <-read_csv("House data iowa.csv")
 
-
-
-
-House_data_iowa %>% count(Neighborhood) %>% 
-    print(n=28)
-
-
-
+central_area_data <- House_data_iowa %>%
+  filter(Neighborhood == c("SWISU", "BrkSide", "CollgCr", "Crawfor", "Edwards", "IDOTRR", "OldTown"))
+view(central_area_data)
 ```
 
 

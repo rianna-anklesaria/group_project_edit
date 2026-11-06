@@ -11,7 +11,7 @@
 
 <meta name="author" content="by Team-Name: Hannah, Hannah, Rianna" />
 
-<meta name="date" content="2026-11-03" />
+<meta name="date" content="2026-11-06" />
 
 <title>IDS investigation worksheet</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">IDS investigation worksheet</h1>
 <h4 class="author">by Team-Name: Hannah, Hannah, Rianna</h4>
-<h4 class="date">2026-11-03</h4>
+<h4 class="date">2026-11-06</h4>
 
 </div>
 
@@ -364,12 +364,31 @@ alley if not needed</p></li>
 <li><p>most important columns to focus on: years built and
 remodelled</p></li>
 <li><p>potential question: what is the most influential variable that
-influences house prices in Iowa: –&gt; possible variables that this
-could consider: remodelling, neighbourhood, condition of various
-features of the house, size of house</p></li>
+influences finished house prices in central Amestown (Iowa): - can
+change to sepcific relationships –&gt; possible variables that this
+could consider: period of remodelling, condition of various features of
+the house - quality ratings overall quality overall condition etc., size
+of house - unfinished/ outliers, when originally built</p></li>
 <li><p>original data set size: 82 variables, 2930 observations</p></li>
+<li><p>central area = SWISSU, College Creek, Edwards, Old Town, IDOTRR,
+Brookside, Crawford</p></li>
+<li><p>count SWISSU = 48, count College Creek = 267, count Edwards =
+194, count Old Town = 239, count IDOTRR = 93, count Brookside = 108,
+count Crawford = 103 code: House_data_iowa %&gt;% count(Neighborhood)
+%&gt;%</p></li>
+<li><pre><code>    print(n=28)</code></pre></li>
 </ul>
-<p>House_data_iowa %&gt;% count(Neighborhood) %&gt;% print(n=28)</p>
+<p>IMPORTANT NOTE FROM DATASET PUBLISHER : SPECIAL NOTES: “There are 5
+observations that an instructor may wish to remove from the data set
+before giving it to students (a plot of SALE PRICE versus GR LIV AREA
+will indicate them quickly). Three of them are true outliers (Partial
+Sales that likely don’t represent actual market values) and two of them
+are simply unusual sales (very large houses priced relatively
+appropriately). I would recommend removing any houses with more than
+4000 square feet from the data set (which eliminates these 5 unusual
+observations) before assigning it to students.” - potentially could
+remove/ acknowlegde outliers = 3 got low price despite larger square
+feet due to being partial sale (lower price than others)</p>
 <pre class="r"><code>library(tidyverse)
 # Add any other libraries here</code></pre>
 <pre class="r"><code># load your data 
@@ -383,6 +402,14 @@ House_data_iowa &lt;-read_csv(&quot;House data iowa.csv&quot;)</code></pre>
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>central_area_data &lt;- House_data_iowa %&gt;%
+  filter(Neighborhood == c(&quot;SWISU&quot;, &quot;BrkSide&quot;, &quot;CollgCr&quot;, &quot;Crawfor&quot;, &quot;Edwards&quot;, &quot;IDOTRR&quot;, &quot;OldTown&quot;))</code></pre>
+<pre><code>## Warning: There was 1 warning in `filter()`.
+## ℹ In argument: `==...`.
+## Caused by warning in `Neighborhood == c(&quot;SWISU&quot;, &quot;BrkSide&quot;, &quot;CollgCr&quot;, &quot;Crawfor&quot;, &quot;Edwards&quot;, &quot;IDOTRR&quot;,
+##     &quot;OldTown&quot;)`:
+## ! longer object length is not a multiple of shorter object length</code></pre>
+<pre class="r"><code>view(central_area_data)</code></pre>
 
 
 
