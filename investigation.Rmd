@@ -24,6 +24,8 @@ code: House_data_iowa %>% count(Neighborhood) %>%
 IMPORTANT NOTE FROM DATASET PUBLISHER : SPECIAL NOTES:
 "There are 5 observations that an instructor may wish to remove from the data set before giving it to students (a plot of SALE PRICE versus GR LIV AREA will indicate them quickly). Three of them are true outliers (Partial Sales that likely don’t represent actual market values) and two of them are simply unusual sales (very large houses priced relatively appropriately). I would recommend removing any houses with more than 4000 square feet from the data set (which eliminates these 5 unusual observations) before assigning it to students." - potentially could remove/ acknowlegde outliers = 3 got low price despite larger square feet due to being partial sale (lower price than others)
 
+Year built = Victorian,Edwardian, Interwar, Post-War
+Remodel = 50s, 60s&70s, 80s&90s, 2000s
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
