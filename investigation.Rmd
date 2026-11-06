@@ -24,7 +24,7 @@ code: House_data_iowa %>% count(Neighborhood) %>%
 IMPORTANT NOTE FROM DATASET PUBLISHER : SPECIAL NOTES:
 "There are 5 observations that an instructor may wish to remove from the data set before giving it to students (a plot of SALE PRICE versus GR LIV AREA will indicate them quickly). Three of them are true outliers (Partial Sales that likely don’t represent actual market values) and two of them are simply unusual sales (very large houses priced relatively appropriately). I would recommend removing any houses with more than 4000 square feet from the data set (which eliminates these 5 unusual observations) before assigning it to students." - potentially could remove/ acknowlegde outliers = 3 got low price despite larger square feet due to being partial sale (lower price than others)
 
-Year built = Victorian,Edwardian, Interwar, Post-War
+Year built = Victorian and gilded age (1830s - 1910s), Interwar (1920s-1945), Post-War (1945 - 1970s), 20th century (1980s-present)
 Remodel = 50s, 60s&70s, 80s&90s, 2000s
 
 ```{r setup, include=FALSE}
@@ -53,6 +53,23 @@ which(is.na(central_area_data), arr.ind = T)
 
 central_area_data <- central_area_data %>% filter(area < 4000)
 
+central_data_with_eras <- central_area_data %>%
+  mutate(
+    era_built = case_when(
+      Year.Built < 1913 ~ "Victorian and Gilded age",
+      Year.Built > 1913 & Year.Built <= 1945 ~ "Interwar",
+      Year.Built > 1945 & Year.Built < 1980 ~ "Post-war",
+      Year.Built >= 1980 ~ "20th century or modern"
+    ), 
+    era_remodelled = case_when(
+      Year.Remod.Add < 1960 ~ "1950s",
+      Year.Remod.Add >= 1960 & Year.Remod.Add < 1980 ~ "1960s and 1970s",
+      Year.Remod.Add >= 1980 & Year.Remod.Add < 2000 ~ "1980s and 1990s",
+      Year.Remod.Add >= 2000 ~ "2000s"
+    )
+  )
+
+view(central_data_with_eras)
 
 ```
 

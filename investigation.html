@@ -389,8 +389,9 @@ appropriately). I would recommend removing any houses with more than
 observations) before assigning it to students.” - potentially could
 remove/ acknowlegde outliers = 3 got low price despite larger square
 feet due to being partial sale (lower price than others)</p>
-<p>Year built = Victorian,Edwardian, Interwar, Post-War Remodel = 50s,
-60s&amp;70s, 80s&amp;90s, 2000s</p>
+<p>Year built = Victorian and gilded age (1830s - 1910s), Interwar
+(1920s-1945), Post-War (1945 - 1970s), 20th century (1980s-present)
+Remodel = 50s, 60s&amp;70s, 80s&amp;90s, 2000s</p>
 <pre class="r"><code>library(tidyverse)
 # Add any other libraries here</code></pre>
 <pre class="r"><code># load your data 
@@ -1087,7 +1088,25 @@ which(is.na(central_area_data), arr.ind = T)</code></pre>
 ## [671,] 138  77
 ## [672,] 139  77
 ## [673,] 140  77</code></pre>
-<pre class="r"><code>central_area_data &lt;- central_area_data %&gt;% filter(area &lt; 4000)</code></pre>
+<pre class="r"><code>central_area_data &lt;- central_area_data %&gt;% filter(area &lt; 4000)
+
+central_data_with_eras &lt;- central_area_data %&gt;%
+  mutate(
+    era_built = case_when(
+      Year.Built &lt; 1913 ~ &quot;Victorian and Gilded age&quot;,
+      Year.Built &gt; 1913 &amp; Year.Built &lt;= 1945 ~ &quot;Interwar&quot;,
+      Year.Built &gt; 1945 &amp; Year.Built &lt; 1980 ~ &quot;Post-war&quot;,
+      Year.Built &gt;= 1980 ~ &quot;20th century or modern&quot;
+    ), 
+    era_remodelled = case_when(
+      Year.Remod.Add &lt; 1960 ~ &quot;1950s&quot;,
+      Year.Remod.Add &gt;= 1960 &amp; Year.Remod.Add &lt; 1980 ~ &quot;1960s and 1970s&quot;,
+      Year.Remod.Add &gt;= 1980 &amp; Year.Remod.Add &lt; 2000 ~ &quot;1980s and 1990s&quot;,
+      Year.Remod.Add &gt;= 2000 ~ &quot;2000s&quot;
+    )
+  )
+
+view(central_data_with_eras)</code></pre>
 
 
 
