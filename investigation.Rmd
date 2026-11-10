@@ -29,6 +29,8 @@ Remodel = 50s, 60s&70s, 80s&90s, 2000s
 
 Overall quality is how well a house is built and condition is how well a house was maintained.
 
+ Add a grpah for the prices of housing sold before and after 2008.
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
