@@ -71,6 +71,17 @@ central_data_with_eras <- central_area_data %>%
 
 view(central_data_with_eras)
 
+central_data_with_eras <- central_data_with_eras %>%
+  mutate(price_k = price/1000)
+
+central_data_with_eras %>%
+  ggplot(aes(x = era_built, y = price_k)) +
+  geom_boxplot() +
+  labs(title = "Price of Houses by Era Built",
+       x = "Era Built",
+       y = "Price in Thousands $") +
+  theme_minimal()
+
 ```
 
 
