@@ -27,6 +27,8 @@ IMPORTANT NOTE FROM DATASET PUBLISHER : SPECIAL NOTES:
 Year built = Victorian and gilded age (1830s - 1910s), Interwar (1920s-1945), Post-War (1945 - 1970s), 20th century (1980s-present)
 Remodel = 50s, 60s&70s, 80s&90s, 2000s
 
+Overall quality is how well a house is built and condition is how well a house was maintained.
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
