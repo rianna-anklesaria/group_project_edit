@@ -1,6 +1,6 @@
 ---
 title: "Project title"
-author: "by Team-Name: User1, User2, User3, User4 & User5"
+author: "by Team-Name: Hannah, Hannah, Rianna"
 date: "`r Sys.Date()`"
 output: html_document
 ---
@@ -23,7 +23,63 @@ library(tidyverse)
 # load your data here and any pre-processing/cleaning 
 #  that you need for your report.
 
+library(readr)
+House_data_iowa <-read_csv("House data iowa.csv")
 
+central_area_data <- House_data_iowa %>%
+  filter(Neighborhood == c("SWISU", "BrkSide", "CollgCr", "Crawfor", "Edwards", "IDOTRR", "OldTown"))
+view(central_area_data)
+which(is.na(central_area_data), arr.ind = T)
+
+central_area_data <- central_area_data %>% filter(area < 4000)
+
+central_data_with_eras <- central_area_data %>%
+  mutate(
+    era_built = case_when(
+      Year.Built < 1913 ~ "Victorian and Gilded age",
+      Year.Built > 1913 & Year.Built <= 1945 ~ "Interwar",
+      Year.Built > 1945 & Year.Built < 1980 ~ "Post-war",
+      Year.Built >= 1980 ~ "20th century or modern"
+    ), 
+    era_remodelled = case_when(
+      Year.Remod.Add < 1960 ~ "1950s",
+      Year.Remod.Add >= 1960 & Year.Remod.Add < 1980 ~ "1960s and 1970s",
+      Year.Remod.Add >= 1980 & Year.Remod.Add < 2000 ~ "1980s and 1990s",
+      Year.Remod.Add >= 2000 ~ "2000s"
+    )
+  )
+
+view(central_data_with_eras)
+
+central_data_with_eras <- central_data_with_eras %>%
+  mutate(price_k = price/1000)
+
+central_data_with_eras %>%
+  ggplot(aes(x = era_built, y = price_k)) +
+  geom_boxplot() +
+  labs(title = "Price of Houses by Era Built",
+       x = "Era Built",
+       y = "Price in Thousands $") +
+  theme_minimal()
+
+central_data_with_eras %>%
+  ggplot(aes(x = era_remodelled, y = price_k)) +
+  geom_boxplot() +
+  labs(title = "Price of Houses by Era Remodelled",
+       x = "Era Remodelled",
+       y = "Price in Thousands $") +
+  theme_minimal()
+
+central_data_with_eras %>%
+  ggplot(aes(x = area, y = price_k)) +
+  geom_point(aes(colour = House.Style)) +
+  geom_smooth(method = "lm", se = FALSE, colour = "black") +
+  labs(title = "House Prices by Area",
+       subtitle = "by Style",
+       x = "Area in square feet",
+       y = "Price in Thousands $") +
+  theme_minimal()
+  
 
 
 ```
@@ -33,7 +89,7 @@ library(tidyverse)
 
 Describe your research question here. Include why this question might be of interest. 
 
-
+potential question = what is the most influential variable that influences finished house prices in central Amestown (Iowa): - can change to sepcific relationships
 
 
 
@@ -44,6 +100,8 @@ Include a citation for your data.
 See http://libraryguides.vu.edu.au/c.php?g=386501&p=4347840 for guidance on proper citation for datasets. 
 If you got your data off the web, make sure to state the retrieval date.
 
+retrieval date = 30/10/26
+House prices data is datatset which includes prices of houses sold in Iowa between 2006 and 2010, and their various features, such as basement quality,  and overall condition, along with structural characteristics such as stories and overall quality, across different residential areas. 
 
 
 
@@ -75,4 +133,5 @@ Make sure to hide your code with  `echo = FALSE` unless the point you are trying
 
 List any references here. You should, at a minimum, list your data source.
 
-
+Key which describes the data & ethics info = https://jse.amstat.org/v19n3/decock/DataDocumentation.txt
+data = House prices data Iowa = https://www.openintro.org/data/csv/ames.csv
