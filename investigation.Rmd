@@ -92,6 +92,16 @@ central_data_with_eras %>%
        y = "Price in Thousands $") +
   theme_minimal()
 
+central_data_with_eras %>%
+  ggplot(aes(x = area, y = price_k)) +
+  geom_point(aes(colour = House.Style)) +
+  geom_smooth(method = "lm", se = FALSE, colour = "black") +
+  labs(title = "House Prices by Area",
+       subtitle = "by Style",
+       x = "Area in square feet",
+       y = "Price in Thousands $") +
+  theme_minimal()
+  
 ```
 
 
