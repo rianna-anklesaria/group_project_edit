@@ -118,11 +118,22 @@ central_data_with_eras %>%
 central_data_with_eras %>%
      ggplot(aes(x = Neighborhood, y = price_k)) +
      geom_boxplot() +
- labs(title = "Price of Houses by Era Neighbourhood",
+ labs(title = "Price of Houses by Neighbourhood",
         x = "Neighbourhood",
         y = "Price in Thousands $") +
    theme_minimal()
   
+central_data_with_eras %>%
+    ggplot(aes(x = area, y = price_k, colour = Neighborhood)) +
+    geom_point(size = 0.5) +
+    geom_smooth(method = "lm", se = FALSE, linewidth = 0.5) +
+    labs(title = "House Prices by Size",
+         subtitle = "by Neighborhood",
+         x = "Area in square feet",
+         y = "Price in Thousands $") +
+    facet_wrap(~Neighborhood) +
+    theme_minimal() +
+    theme(legend.position = "none") 
 ```
 
 
