@@ -89,10 +89,17 @@ central_data_with_eras %>%
 
 Describe your research question here. Include why this question might be of interest. 
 
+<<<<<<< HEAD
 Does neighbourhood drive up sale prices in the central area of Ames, Iowa or are other factors more influential in dtermining sale price? 
 - sub questions: 1) is the relationship between quality / condition and price negligible or significant?
                  2) does the period of remodelling and orginal construction heave great significance on sale price?
                  3) the role of structural characteristics in determining sale price in Iowa (ie house style - stories, area etc.) 
+=======
+Does neighbourhood drive up sale prices in the central area of Ames, Iowa or are other factors more influential in dtermining sale price?
+sub questions: 1) is the relationship between quality / condition and price negligible or significant?
+2) does the period of remodelling and orginal construction heave great significance on sale price?
+3) the role of structural characteristics in determining sale price in Iowa (ie house style - stories, area etc.)
+>>>>>>> 9794cda7b1dcce9e22af7018a10d6fc079bab7b3
 
 
 
@@ -106,6 +113,9 @@ If you got your data off the web, make sure to state the retrieval date.
 retrieval date = 30/10/26
 House prices data is datatset which includes prices of houses sold in Iowa between 2006 and 2010, and their various features, such as basement quality,  and overall condition, along with structural characteristics such as stories and overall quality, across different residential areas. 
 
+
+Retrieval date = 30/10/26
+House prices data is datatset which includes prices of houses sold in Iowa between 2006 and 2010, and their various features, such as basement quality,  and overall condition, along with structural characteristics such as stories and overall quality, across different residential areas. 
 
 
 
