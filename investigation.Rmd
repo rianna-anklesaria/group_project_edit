@@ -115,6 +115,13 @@ central_data_with_eras %>%
        y = "Price in Thousands $") +
   theme_minimal()
 
+central_data_with_eras %>%
+     ggplot(aes(x = Neighborhood, y = price_k)) +
+     geom_boxplot() +
+ labs(title = "Price of Houses by Era Neighbourhood",
+        x = "Neighbourhood",
+        y = "Price in Thousands $") +
+   theme_minimal()
   
 ```
 
