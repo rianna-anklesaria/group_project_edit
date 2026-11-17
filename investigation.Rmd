@@ -136,6 +136,7 @@ central_data_with_eras %>%
     theme(legend.position = "none") 
 
 central_data_with_eras$Overall.Qual <- as.character(central_data_with_eras$Overall.Qual) 
+central_data_with_eras$Overall.Qual <- factor(central_data_with_eras$Overall.Qual, levels = c("2", "3", "4", "5", "6", "7", "8", "9", "10"))
 
 central_data_with_eras %>% 
   ggplot(aes(x = Overall.Qual, y = price_k)) +
@@ -148,8 +149,6 @@ central_data_with_eras %>%
   theme_minimal()
 
 central_data_with_eras$Overall.Cond <- as.character(central_data_with_eras$Overall.Cond) 
-
-central_data_with_eras$Overall.Qual <- factor(central_data_with_eras$Overall.Qual, levels = c("2", "3", "4", "5", "6", "7", "8", "9", "10"))
 
 central_data_with_eras %>% 
   ggplot(aes(x = Overall.Cond, y = price_k)) +
