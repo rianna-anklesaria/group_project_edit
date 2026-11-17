@@ -96,6 +96,10 @@ sub questions: 1) is the relationship between quality / condition and price negl
 2) does the period of remodelling and orginal construction heave great significance on sale price?
 3) the role of structural characteristics in determining sale price in Iowa (ie house style - stories, area etc.)
 
+Research focus
+
+Our focus for researching this particular dataset is to determine the strength of a correlation between the response variable of house sale price, and various explanatory variables including but not limited to house style, area and period of remodelling. 
+
 
 
 
@@ -107,9 +111,13 @@ See http://libraryguides.vu.edu.au/c.php?g=386501&p=4347840 for guidance on prop
 If you got your data off the web, make sure to state the retrieval date.
 
 
+Data description 
+Our analysis explores the House prices data (collected between 2006 and 2010) which is a dataset, accessed on 30/10/26, consisting of 82 variables and 2930 observations. These variables include the prices of houses sold in Iowa along with their various features, such as basement quality, in addition to structural characteristics stories and overall quality, across different residential areas. The vast spread of data is highly beneficial for providing us with insight into both qualitative and quantitative factors in influencing house prices in Iowa during this period. Thus, enabling us to scale down the data into fewer of both qualitative and quantitative variables (with respect to our question). 
 
-Retrieval date = 30/10/26
-House prices data is datatset which includes prices of houses sold in Iowa between 2006 and 2010, and their various features, such as basement quality,  and overall condition, along with structural characteristics such as stories and overall quality, across different residential areas. 
+Methodology 
+Initially, it was determined most vital to clean the dataset. Our first step for this was to narrow down the location into just the central area using the filter function. We took effort to avoid removing columns unnecessarily as to avoid a bias in our results which would present if other variables i.e. basement quality were deceivingly insignificant. Thereby, as we had not fully confirmed out question, and subsequently concluded our reading on the area of focus, we chose to keep the columns as originally presented. Though, as recommended by the data publishers we did remove a row including an outlier to minimise the possibility of inaccurate interpretations during our initial exploration. The data, in regards to our specific area of focus, did not require extensive cleaning, rather our tidying involved mutating the overwhelmingly large data into smaller specific columns which would allow us to easily interpret the information and allow for efficient comparisons. For example, we transformed the “year built” into general periods i.e. Interwar. As a result, this enabled us to form our research question of: “Does neighbourhood drive up sale prices in the central area of Ames, Iowa or are other factors more influential in dtermining sale price?”, our chosen approach was to divide this broad question into three sub questions: 1) Is the relationship between quality / condition and price negligible or significant?
+2) Does the period of remodelling and orginal construction heave great significance on sale price?
+3) What is the role of structural characteristics in determining sale price in Iowa (ie house style - stories, area etc.)? Creating relevant visualisations for these sub questions was crucial in our analysis as it not only strengthened our initial understanding of these variables, but reinforced the dominant ideas displayed across these visualisations. For example, we were able to hypothesise from our these visualisations that size is not necessarily the most influential factor in influencing prices of houses sold in Iowa during this time. 
 
 
 
