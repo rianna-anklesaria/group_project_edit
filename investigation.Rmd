@@ -134,6 +134,43 @@ central_data_with_eras %>%
     facet_wrap(~Neighborhood) +
     theme_minimal() +
     theme(legend.position = "none") 
+
+central_data_with_eras$Overall.Qual <- as.character(central_data_with_eras$Overall.Qual) 
+
+central_data_with_eras %>% 
+  ggplot(aes(x = Overall.Qual, y = price_k)) +
+  geom_boxplot() +
+  labs(
+    title = "House Price by Overall Quality of Build", 
+    x = "Overall Quality Rating", 
+    y = "Price in Thousands $"
+  ) +
+  theme_minimal()
+
+central_data_with_eras$Overall.Cond <- as.character(central_data_with_eras$Overall.Cond) 
+
+central_data_with_eras$Overall.Qual <- factor(central_data_with_eras$Overall.Qual, levels = c("2", "3", "4", "5", "6", "7", "8", "9", "10"))
+
+central_data_with_eras %>% 
+  ggplot(aes(x = Overall.Cond, y = price_k)) +
+  geom_boxplot() +
+  labs(
+    title = "House Price by Overall Condition of Maintainance", 
+    x = "Overall Condition Rating",
+    y = "Price in Thousands $"
+  ) + 
+  theme_minimal()
+
+central_data_with_eras %>%
+  ggplot(aes(x = Overall.Qual, y = price_k, colour = Overall.Cond)) +
+  geom_point(alpha = 0.5) +
+  labs(
+    title = "Relationship Between House Prices, Quality and Condition",
+    x = "Overall Quality Rating",
+    y = "Price in Thousands $",
+    colour = "Overall Condition Rating"
+  ) +
+  theme_minimal()
 ```
 
 
