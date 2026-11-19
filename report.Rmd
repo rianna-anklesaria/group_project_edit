@@ -165,6 +165,8 @@ You can also load your data here and present any analysis results / plots.
 Make sure to hide your code with  `echo = FALSE` unless the point you are trying to make is about the code itself, in which case you should show your code.
 
 
+Research Focus 
+Our focus for researching this particular dataset is to determine the strength of a correlation between the response variable of house sale price, and various explanatory variables including but not limited to house style, area and period of remodelling. 
 
 
 
