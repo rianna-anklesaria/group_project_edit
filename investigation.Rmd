@@ -184,6 +184,21 @@ ggplot(augmented_data, aes(x = .fitted, y = .resid)) +
     y = "Residuals"
   ) +
   theme_minimal()
+central_data_with_eras <- central_data_with_eras %>% 
+  mutate(price_per_sq_ft = price_k / area)
+neighbourhood_price_per_sq_ft <- central_data_with_eras %>%
+  group_by(Neighborhood) %>%
+  summarise(median_price_per_sq_ft = median(price_per_sq_ft, na.rm = TRUE))
+
+ggplot(neighbourhood_price_per_sq_ft, aes(x = reorder(Neighborhood, median_price_per_sq_ft), y = median_price_per_sq_ft)) +
+  geom_segment(aes(xend = Neighborhood, y = 0, yend = median_price_per_sq_ft), colour = "forestgreen") +
+  geom_point(size = 4, colour = "orange") +
+  labs(
+    title = "Price buyers pay per square foot of area (median price per square ft by neighbourhood)",
+    x = "Neighbourhood",
+    y = "Median price ($) per square ft(area)"
+  ) +
+  theme_minimal()
 ```
 
 
