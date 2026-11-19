@@ -38,6 +38,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r load-lib, message = FALSE}
 library(tidyverse)
+library(tidymodels)
 # Add any other libraries here
 
 
@@ -168,6 +169,19 @@ central_data_with_eras %>%
     x = "Overall Quality Rating",
     y = "Price in Thousands $",
     colour = "Overall Condition Rating"
+  ) +
+  theme_minimal()
+
+price_fit <- lm(price_k ~ area, data = central_data_with_eras)
+
+augmented_data <- augment(price_fit)
+ggplot(augmented_data, aes(x = .fitted, y = .resid)) +
+  geom_point() + 
+  geom_hline(yintercept = 0, linetype = "dashed", colour = "red") +
+  labs(
+    title = "Residual plot",
+    x = "Predicted price against Area",
+    y = "Residuals"
   ) +
   theme_minimal()
 ```
