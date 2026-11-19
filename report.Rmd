@@ -144,6 +144,8 @@ The graph shows a positive relationship between house area and sale price, altho
  5) Prices of houses by neighbourhood :
 From thew graph we can see Crawford has the highest average house price, whereas Old Town has the lowest. Edwards, IDOTRR, SWISU and Brookside have relatively similar average prices, clustering within the $100,000–$150,000 range. Interestingly, Old Town also displays the widest range of prices, containing both the highest and lowest extreme values, suggesting considerable variation in house prices within the neighbourhood.
 
+point + segment graph = Shows how much buyers pay for houses purely based on sq feet area in each neighbourhood in central Ames, shows cheapest vs most exp neighbourhood per sq ft neighbourhoods such as College Creek and Crawford both remain near the top in both 1st neighbourhood boxplot AND new graph here, meaning the neighbourhood alone carries significant weight in price. detrminants as buyers pay more for these neighbourhoods even for same area. Neighbourhoods which fell in point segment graph in comparison to initial single price boxplot then these houses only appeared to be priced higher because they had a bigger area (bigger size in gen), instead of the neighbourhood alone adding to price. Neighbourhoods that increased in point segment graph ie Berkside or SWISU) means even though total house prices appear moderate, buyers pay a relatively high rate per square ft (seems that because small area houses nearby central Ames have a higher sale price per square ft area). Conc = houses in some neighrbourhoods remain more exp than other even if sq ft is same 
+
 
 
 The write-up of your project and findings go here. 
