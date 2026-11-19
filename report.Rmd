@@ -146,6 +146,17 @@ From thew graph we can see Crawford has the highest average house price, whereas
 
 point + segment graph = Shows how much buyers pay for houses purely based on sq feet area in each neighbourhood in central Ames, shows cheapest vs most exp neighbourhood per sq ft neighbourhoods such as College Creek and Crawford both remain near the top in both 1st neighbourhood boxplot AND new graph here, meaning the neighbourhood alone carries significant weight in price. detrminants as buyers pay more for these neighbourhoods even for same area. Neighbourhoods which fell in point segment graph in comparison to initial single price boxplot then these houses only appeared to be priced higher because they had a bigger area (bigger size in gen), instead of the neighbourhood alone adding to price. Neighbourhoods that increased in point segment graph ie Berkside or SWISU) means even though total house prices appear moderate, buyers pay a relatively high rate per square ft (seems that because small area houses nearby central Ames have a higher sale price per square ft area). Conc = houses in some neighrbourhoods remain more exp than other even if sq ft is same 
 
+House Price by Quality of Build and Condition of Maintenance Graphs
+
+* There is a clear positive correlation between a house’s overall quality rating and its selling price. Properties rated between 3 and 6 (out of 10) have relatively similar median prices and data distributions. However, those rated above 7 generally sell for considerably more. Houses rated 10 sold for $475,000, compared with just $12,000 for those rated 2.
+* The relationship is less apparent when considering the house’s overall condition at the time of sale. Median selling prices remain relatively similar across all condition ratings, while the interquartile ranges are considerably wider. This suggests that a property's condition at the time of sale has limited influence on its selling price.
+* When considering both factors together, a positive linear relationship is evident between overall quality and selling price. However, condition continues to have only a marginal effect on either the quality rating or the price.
+- 
+
+Residuals plot graph 
+
+- The graph shows that the model of house prices versus area does have a relatively linear relationship. The points are fairly randomly scattered around the zero line suggesting other patterns are unlikely to be present and, if it was the focus of a predictive question, it is likely that the model could fairly accurately predict the price of a house based on its area in square footage. 
+
 
 
 The write-up of your project and findings go here. 
