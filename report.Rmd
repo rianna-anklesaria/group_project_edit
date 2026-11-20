@@ -132,6 +132,9 @@ Initially, it was determined most vital to clean the dataset. Our first step for
 
 ## Findings
 
+Research Focus 
+Our focus for researching this particular dataset is to determine the strength of a correlation between the response variable of house sale price, and various explanatory variables including but not limited to house style, area and period of remodelling. 
+
 Initial Exploration
 
 We stared with visual analyses of how the Prices of Houses in Amez are  affected by different factors:
@@ -184,19 +187,10 @@ You can also load your data here and present any analysis results / plots.
 Make sure to hide your code with  `echo = FALSE` unless the point you are trying to make is about the code itself, in which case you should show your code.
 
 
-Research Focus 
-Our focus for researching this particular dataset is to determine the strength of a correlation between the response variable of house sale price, and various explanatory variables including but not limited to house style, area and period of remodelling. 
 
 
-Research Question
-Does neighbourhood drive up sale prices in the central area of Ames, Iowa or are other factors more influential at determining sale price?
-Ans) The initial findings suggest that neighbourhood has a considerable influence on house sale prices in Ames, although it is not the only determining factor. Crawford has the highest average sale price, while Old Town has the lowest. College Creek also appears to command relatively higher prices compared with neighbourhoods such as Edwards and Brookside. However, the considerable variation in prices within individual neighbourhoods suggests that other characteristics also contribute to property values.
-House size(area), overall build quality and the period of remodelling demonstrate noticeable relationships with sale price. In particular, house area has a positive relationship with price, while higher quality properties generally achieve higher sale prices. Therefore, although neighbourhood contributes to differences in property values, structural characteristics and property quality are also important determinants.
 
-Sub questions:
-1) Is the relationship between quality / condition and price negligible or significant?
-Ans) We can see that the overall build quality has a strong positive relationship with house sale prices. As the overall quality rating increases, the median sale price also rises. This suggests that buyers place substantial value on properties with better construction and finishing standards.
-In comparison, overall condition appears to have a weaker relationship with sale price. Therefore build quality appears to be a more influential factor than general property condition when determining sale price.
+
 
 
 
