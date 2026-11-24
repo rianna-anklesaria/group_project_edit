@@ -135,7 +135,7 @@ a, a > code {
 }
 .title-slide {
   background-color: var(--title-slide-background-color);
-  background-image: url("img/confetti.jpg");
+  background-image: url("https://th.bing.com/th/id/OIP.A3-a8gIFOKv4L87WDmJAfAHaE8?w=217&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3");
   background-size: cover;
 }
 .title-slide .remark-slide-number {
