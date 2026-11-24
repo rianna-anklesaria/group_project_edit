@@ -194,11 +194,14 @@ ggplot(neighbourhood_price_per_sq_ft, aes(x = reorder(Neighborhood, median_price
   geom_segment(aes(xend = Neighborhood, y = 0, yend = median_price_per_sq_ft), colour = "orange") +
   geom_point(size = 4, colour = "orange") +
   labs(
-    title = "Price buyers pay per square foot of area (median price per square ft by neighbourhood)",
+    title = "Price buyers pay per square foot of area", 
+    subtitle = "Median price per square ft by Neighbourhood",
     x = "Neighbourhood",
     y = "Median price ($) per square ft(area)"
   ) +
   theme_minimal()
+
+
 ```
 
 
