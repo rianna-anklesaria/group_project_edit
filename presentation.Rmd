@@ -1,7 +1,7 @@
 ---
-title: "Presentation title"
-subtitle: "Presentation subtitle (if any)"
-author: "Team name <br> Names of team members"
+title: "Ames House Prices"
+subtitle: "An inferential data analysis"
+author: "Hannah Ladbrook, Hannah Rae, Rianna Anklesaria"
 institute: "University of Edinburgh"
 date: "`r Sys.Date()`"
 output:
@@ -40,6 +40,8 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 
 ```{r load-data, include=FALSE}
 # Load your data here
+library(readr)
+House_data_iowa <-read_csv("House data iowa.csv")
 
 ```
 
@@ -54,6 +56,8 @@ style_xaringan(
 class: center, middle
 
 ## A statement of the overall goal / research question
+
+Does neighbourhood drive up sale prices in the central area of Ames, Iowa or are other factors more influential at determining sale price?
 
 ---
 
