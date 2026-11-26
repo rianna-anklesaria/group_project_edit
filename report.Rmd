@@ -168,6 +168,9 @@ Residuals plot graph
 
 - The graph shows that the model of house prices versus area does have a relatively linear relationship. The points are fairly randomly scattered around the zero line suggesting other patterns are unlikely to be present and, if it was the focus of a predictive question, it is likely that the model could fairly accurately predict the price of a house based on its area in square footage. 
 
+House Prices By quality by neighbourhood graph:
+
+- This reflects a clear relationship between quality and price of houses regardless of neighbourhood, suggesting potentially that quality rating is a more influential factor in determining prices. This can clearly be exemplified as two houses in the same neighbourhood of Old Town, with different ratings sold for very different prices. However, there is some evidence that continues to support the hypothesis that neighbourhood is highly influential. For example within the medium ratings, Crawford and college creek continue to show higher prices than other neighbourhoods where houses had the same quality rating, yet this trend is less clear than the overall correlation between quality and price. 
 
 
 The write-up of your project and findings go here. 
