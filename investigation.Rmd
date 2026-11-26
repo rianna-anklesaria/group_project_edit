@@ -223,6 +223,17 @@ linear_reg() %>%
   set_engine("lm") %>%
   fit(price_k ~ area, data = central_data_with_eras) %>%
   tidy()
+
+central_data_with_eras %>%
+  ggplot(aes(x = Total.Bsmt.SF, y = price_k, colour = area)) +
+  geom_point() +
+  labs(
+    title = "Price of Houses By Basement size",
+    x = "Total Basement Area (square ft)",
+    y = "Price in Thousands $", 
+    colour = "Total Area of House") +
+  theme_minimal()
+
 ```
 
 
