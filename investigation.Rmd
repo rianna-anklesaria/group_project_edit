@@ -201,8 +201,6 @@ ggplot(neighbourhood_price_per_sq_ft, aes(x = reorder(Neighborhood, median_price
   ) +
   theme_minimal()
 
-<<<<<<< HEAD
-=======
 central_data_with_eras %>%
     ggplot(aes(x = Overall.Qual, y = price_k, colour = Neighborhood)) +
     geom_boxplot() +
@@ -226,6 +224,6 @@ linear_reg() %>%
   fit(price_k ~ area, data = central_data_with_eras) %>%
   tidy()
 ```
->>>>>>> fa6c75833c54906c8fd6c66f08ed2332a93a792e
+
 
 
