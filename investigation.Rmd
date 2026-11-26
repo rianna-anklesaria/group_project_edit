@@ -194,11 +194,38 @@ ggplot(neighbourhood_price_per_sq_ft, aes(x = reorder(Neighborhood, median_price
   geom_segment(aes(xend = Neighborhood, y = 0, yend = median_price_per_sq_ft), colour = "orange") +
   geom_point(size = 4, colour = "orange") +
   labs(
-    title = "Price buyers pay per square foot of area (median price per square ft by neighbourhood)",
+    title = "Price buyers pay per square foot of area", 
+    subtitle = "Median price per square ft by Neighbourhood",
     x = "Neighbourhood",
     y = "Median price ($) per square ft(area)"
   ) +
   theme_minimal()
 
+<<<<<<< HEAD
+=======
+central_data_with_eras %>%
+    ggplot(aes(x = Overall.Qual, y = price_k, colour = Neighborhood)) +
+    geom_boxplot() +
+    labs(title = "House Prices by Quality",
+         subtitle = "by Neighborhood",
+         x = "Overall Quality Rating",
+         y = "Price in Thousands $") +
+    theme_minimal() 
+
+central_data_with_eras %>%
+  group_by(Neighborhood) %>%
+  count(Overall.Qual)
+    
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(price_k ~ area + Neighborhood + Overall.Qual, data = central_data_with_eras) %>%
+  tidy()
+
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(price_k ~ area, data = central_data_with_eras) %>%
+  tidy()
+```
+>>>>>>> fa6c75833c54906c8fd6c66f08ed2332a93a792e
 
 

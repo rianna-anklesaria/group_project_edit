@@ -43,21 +43,21 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 library(readr)
 House_data_iowa <-read_csv("House data iowa.csv")
 
+
 ```
 
 ```{r include=FALSE}
 
 #Background image
 style_xaringan(
-  title_slide_background_image = "img/confetti.jpg"
+  title_slide_background_image = "https://th.bing.com/th/id/OIP.A3-a8gIFOKv4L87WDmJAfAHaE8?w=217&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"
 )
+
 ```
 
 class: center, middle
 
-## A statement of the overall goal / research question
-
-Does neighbourhood drive up sale prices in the central area of Ames, Iowa or are other factors more influential at determining sale price?
+## Does neighbourhood drive up sale prices in the central area of Ames, Iowa or are other factors more influential at determining sale price?
 
 ---
 
