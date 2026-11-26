@@ -87,33 +87,20 @@ central_data_with_eras %>%
 
 ## Research Question
 
-Describe your research question here. Include why this question might be of interest. 
-
 Research Question
-Does neighbourhood drive up sale prices in the central area of Ames, Iowa or are other factors more influential at determining sale price?
-Ans) The initial findings suggest that neighbourhood has a considerable influence on house sale prices in Ames, although it is not the only determining factor. Crawford has the highest average sale price, while Old Town has the lowest. College Creek also appears to command relatively higher prices compared with neighbourhoods such as Edwards and Brookside. However, the considerable variation in prices within individual neighbourhoods suggests that other characteristics also contribute to property values.
-House size(area), overall build quality and the period of remodelling demonstrate noticeable relationships with sale price. In particular, house area has a positive relationship with price, while higher quality properties generally achieve higher sale prices. Therefore, although neighbourhood contributes to differences in property values, structural characteristics and property quality are also important determinants.
+Does neighbourhood drive up sale prices in the central area of Ames, Iowa or are other factors more influential at determining sale price? 
 
 Sub questions:
 1) Is the relationship between quality / condition and price negligible or significant?
-Ans) We can see that the overall build quality has a strong positive relationship with house sale prices. As the overall quality rating increases, the median sale price also rises. This suggests that buyers place substantial value on properties with better construction and finishing standards.
-In comparison, overall condition appears to have a weaker relationship with sale price. Therefore build quality appears to be a more influential factor than general property condition when determining sale price.
 
 2) Does the period of remodelling and original construction heave great significance on sale price?
-Ans) The original construction demonstrates some variation in sale prices. Victorian and Gilded Age properties have the lowest median prices, although their values are only marginally below those of Interwar and Post-war properties. In contrast, 20th-century and modern properties generally achieve higher median sale prices. Victorian and Gilded Age houses also display greater price variation, suggesting that older properties can still achieve considerably different market values.
-The period of remodelling demonstrates a clearer positive relationship with sale price. Properties remodelled more recently tend to have higher median prices, with houses remodelled during the 1980s, 1990s and 2000s generally achieving higher values than those remodelled in earlier periods. This suggests that modernisation and property improvements may contribute to increased market value.
 
+3) To what extent do structural characteristics play a prominent role in determining sale price in Iowa (e.g. house style and area)?
 
-3) the role of structural characteristics in determining sale price in Iowa (ie house style - stories, area etc.)
-Ans) Structural characteristics, particularly house area, play an important role in determining sale prices. There is a clear positive relationship with between the total living area (square feet) and sale price, indicating that larger properties generally achieve higher market values. However, the considerable spread of observations around the line of best fit suggests that house size alone cannot fully explain differences in property prices. The number of stories also contributes to varying sale prices. Properties with fewer storeys tend to cluster below the line of best fit, whereas some houses with more storeys achieve higher prices despite having similar floor areas.
-From this we can conclude that comparisons across neighbourhoods suggests that similarly sized houses can achieve different prices depending on their location.
-
-
-
+Research Focus 
+Our focus for researching this particular dataset is to determine the strength of a correlation between the response variable of house sale price, and various explanatory variables including but not limited to house style, area and period of remodelling.
 
 ## Data
-
-Briefly describe your dataset here - include a description of the key variables you will be investigating. 
 Include a citation for your data. 
 See http://libraryguides.vu.edu.au/c.php?g=386501&p=4347840 for guidance on proper citation for datasets. 
 If you got your data off the web, make sure to state the retrieval date.
@@ -127,15 +114,11 @@ Initially, it was determined most vital to clean the dataset. Our first step for
 2) Does the period of remodelling and orginal construction heave great significance on sale price?
 3) What is the role of structural characteristics in determining sale price in Iowa (ie house style - stories, area etc.)? Creating relevant visualisations for these sub questions was crucial in our analysis as it not only strengthened our initial understanding of these variables, but reinforced the dominant ideas displayed across these visualisations. For example, we were able to hypothesise from our these visualisations that size is not necessarily the most influential factor in influencing prices of houses sold in Iowa during this time. 
 
-
-
+*data citation here*
 
 ## Findings
 
-Research Focus 
-Our focus for researching this particular dataset is to determine the strength of a correlation between the response variable of house sale price, and various explanatory variables including but not limited to house style, area and period of remodelling. 
-
-Initial Exploration
+Initial Exploration & Findings
 
 We stared with visual analyses of how the Prices of Houses in Amez are  affected by different factors:
  
@@ -155,27 +138,31 @@ The graph shows a positive relationship between house area and sale price, altho
  5) Prices of houses by neighbourhood :
 From thew graph we can see Crawford has the highest average house price, whereas Old Town has the lowest. Edwards, IDOTRR, SWISU and Brookside have relatively similar average prices, clustering within the $100,000–$150,000 range. Interestingly, Old Town also displays the widest range of prices, containing both the highest and lowest extreme values, suggesting considerable variation in house prices within the neighbourhood.
 
-point + segment graph = Shows how much buyers pay for houses purely based on sq feet area in each neighbourhood in central Ames, shows cheapest vs most exp neighbourhood per sq ft neighbourhoods such as College Creek and Crawford both remain near the top in both 1st neighbourhood boxplot AND new graph here, meaning the neighbourhood alone carries significant weight in price. detrminants as buyers pay more for these neighbourhoods even for same area. Neighbourhoods which fell in point segment graph in comparison to initial single price boxplot then these houses only appeared to be priced higher because they had a bigger area (bigger size in gen), instead of the neighbourhood alone adding to price. Neighbourhoods that increased in point segment graph ie Berkside or SWISU) means even though total house prices appear moderate, buyers pay a relatively high rate per square ft (seems that because small area houses nearby central Ames have a higher sale price per square ft area). Conc = houses in some neighrbourhoods remain more exp than other even if sq ft is same 
+6) Point + segment graph: 
+Shows how much buyers pay for houses purely based on sq feet area in each neighbourhood in central Ames, shows cheapest vs most exp neighbourhood per sq ft neighbourhoods such as College Creek and Crawford both remain near the top in both 1st neighbourhood boxplot AND new graph here, meaning the neighbourhood alone carries significant weight in price. detrminants as buyers pay more for these neighbourhoods even for same area. Neighbourhoods which fell in point segment graph in comparison to initial single price boxplot then these houses only appeared to be priced higher because they had a bigger area (bigger size in gen), instead of the neighbourhood alone adding to price. Neighbourhoods that increased in point segment graph ie Berkside or SWISU) means even though total house prices appear moderate, buyers pay a relatively high rate per square ft (seems that because small area houses nearby central Ames have a higher sale price per square ft area). Conc = houses in some neighrbourhoods remain more exp than other even if sq ft is same 
 
-House Price by Quality of Build and Condition of Maintenance Graphs
+7) House Price by Quality of Build and Condition of Maintenance Graphs: 
+There is a clear positive correlation between a house’s overall quality rating and its selling price. Properties rated between 3 and 6 (out of 10) have relatively similar median prices and data distributions. However, those rated above 7 generally sell for considerably more. Houses rated 10 sold for $475,000, compared with just $12,000 for those rated 2. The relationship is less apparent when considering the house’s overall condition at the time of sale. Median selling prices remain relatively similar across all condition ratings, while the interquartile ranges are considerably wider. This suggests that a property's condition at the time of sale has limited influence on its selling price. When considering both factors together, a positive linear relationship is evident between overall quality and selling price. However, condition continues to have only a marginal effect on either the quality rating or the price.
 
-* There is a clear positive correlation between a house’s overall quality rating and its selling price. Properties rated between 3 and 6 (out of 10) have relatively similar median prices and data distributions. However, those rated above 7 generally sell for considerably more. Houses rated 10 sold for $475,000, compared with just $12,000 for those rated 2.
-* The relationship is less apparent when considering the house’s overall condition at the time of sale. Median selling prices remain relatively similar across all condition ratings, while the interquartile ranges are considerably wider. This suggests that a property's condition at the time of sale has limited influence on its selling price.
-* When considering both factors together, a positive linear relationship is evident between overall quality and selling price. However, condition continues to have only a marginal effect on either the quality rating or the price.
-- 
+8) Residuals plot graph:
+The graph shows that the model of house prices versus area does have a relatively linear relationship. The points are fairly randomly scattered around the zero line suggesting other patterns are unlikely to be present and, if it was the focus of a predictive question, it is likely that the model could fairly accurately predict the price of a house based on its area in square footage. 
 
-Residuals plot graph 
+9) House Prices By quality by neighbourhood graph:
+This reflects a clear relationship between quality and price of houses regardless of neighbourhood, suggesting potentially that quality rating is a more influential factor in determining prices. This can clearly be exemplified as two houses in the same neighbourhood of Old Town, with different ratings sold for very different prices. However, there is some evidence that continues to support the hypothesis that neighbourhood is highly influential. For example within the medium ratings, Crawford and college creek continue to show higher prices than other neighbourhoods where houses had the same quality rating, yet this trend is less clear than the overall correlation between quality and price. 
 
-- The graph shows that the model of house prices versus area does have a relatively linear relationship. The points are fairly randomly scattered around the zero line suggesting other patterns are unlikely to be present and, if it was the focus of a predictive question, it is likely that the model could fairly accurately predict the price of a house based on its area in square footage. 
+The initial findings suggest that neighbourhood has a considerable influence on house sale prices in Ames, although it is not the only determining factor. Crawford has the highest average sale price, while Old Town has the lowest. College Creek also appears to command relatively higher prices compared with neighbourhoods such as Edwards and Brookside. However, the considerable variation in prices within individual neighbourhoods suggests that other characteristics also contribute to property values.
+House size(area), overall build quality and the period of remodelling demonstrate noticeable relationships with sale price. In particular, house area has a positive relationship with price, while higher quality properties generally achieve higher sale prices. Therefore, although neighbourhood contributes to differences in property values, structural characteristics and property quality are also important determinants.
 
-House Prices By quality by neighbourhood graph:
+Findings for sub question 1 "Is the relationship between quality / condition and price negligible or significant?" present that the overall build quality has a strong positive relationship with house sale prices. As the overall quality rating increases, the median sale price also rises. This suggests that buyers place substantial value on properties with better construction and finishing standards.
+In comparison, overall condition appears to have a weaker relationship with sale price. Therefore build quality appears to be a more influential factor than general property condition when determining sale price.
 
-- This reflects a clear relationship between quality and price of houses regardless of neighbourhood, suggesting potentially that quality rating is a more influential factor in determining prices. This can clearly be exemplified as two houses in the same neighbourhood of Old Town, with different ratings sold for very different prices. However, there is some evidence that continues to support the hypothesis that neighbourhood is highly influential. For example within the medium ratings, Crawford and college creek continue to show higher prices than other neighbourhoods where houses had the same quality rating, yet this trend is less clear than the overall correlation between quality and price. 
+Findings for sub question 2 "Does the period of remodelling and original construction heave great significance on sale price?" present that
+the original construction demonstrates some variation in sale prices. Victorian and Gilded Age properties have the lowest median prices, although their values are only marginally below those of Interwar and Post-war properties. In contrast, 20th-century and modern properties generally achieve higher median sale prices. Victorian and Gilded Age houses also display greater price variation, suggesting that older properties can still achieve considerably different market values. The period of remodelling demonstrates a clearer positive relationship with sale price. Properties remodelled more recently tend to have higher median prices, with houses remodelled during the 1980s, 1990s and 2000s generally achieving higher values than those remodelled in earlier periods. This suggests that modernisation and property improvements may contribute to increased market value.
+
+Findings for sub question 3 "To what extent do structural characteristics play a prominent role in determining sale price in Iowa (e.g. house style and area)" presents that structural characteristics, particularly house area, play an important role in determining sale prices. There is a clear positive relationship with between the total living area (square feet) and sale price, indicating that larger properties generally achieve higher market values. However, the considerable spread of observations around the line of best fit suggests that house size alone cannot fully explain differences in property prices. The number of stories also contributes to varying sale prices. Properties with fewer storeys tend to cluster below the line of best fit, whereas some houses with more storeys achieve higher prices despite having similar floor areas. From this we can conclude that comparisons across neighbourhoods suggests that similarly sized houses can achieve different prices depending on their location.
 
 
-The write-up of your project and findings go here. 
 
-Think of this as the text of your presentation with some extra detail to cover what there was not time to discuss in the presentation. This might include any assumptions you made when doing your analysis, any limitations of the work you have done or any ideas you have for future work. Feel free to split this section into subsections to make it easier to read. 
 
 The length should be roughly 1,500 words. 
 If you want to use a word count addin, you can install this by copying and pasting the following into RStudio:
