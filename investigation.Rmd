@@ -199,6 +199,6 @@ ggplot(neighbourhood_price_per_sq_ft, aes(x = reorder(Neighborhood, median_price
     y = "Median price ($) per square ft(area)"
   ) +
   theme_minimal()
-```
+
 
 
