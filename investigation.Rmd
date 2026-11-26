@@ -85,7 +85,8 @@ central_data_with_eras %>%
   labs(title = "Price of Houses by Era Built",
        x = "Era Built",
        y = "Price in Thousands $") +
-  theme_minimal()
+  theme_minimal() +
+  theme(legend.position = "none")
 
 central_data_with_eras %>%
   ggplot(aes(x = era_remodelled, y = price_k)) +
@@ -93,7 +94,8 @@ central_data_with_eras %>%
   labs(title = "Price of Houses by Era Remodelled",
        x = "Era Remodelled",
        y = "Price in Thousands $") +
-  theme_minimal()
+  theme_minimal() +
+  theme(legend.position = "none")
 
 central_data_with_eras %>%
   ggplot(aes(x = area, y = price_k)) +
