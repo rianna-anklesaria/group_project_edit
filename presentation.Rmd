@@ -47,12 +47,17 @@ House_data_iowa <-read_csv("House data iowa.csv")
 ```
 
 ```{r include=FALSE}
-
-#Background image
 style_xaringan(
   title_slide_background_image = "https://th.bing.com/th/id/OIP.A3-a8gIFOKv4L87WDmJAfAHaE8?w=217&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"
 )
-
+```{css, echo=FALSE}
+.title-slide h1,
+.title-slide h2,
+.title-slide h3,
+.title-slide p {
+  color: RED !important;
+}
+```
 ```
 
 class: center, middle
