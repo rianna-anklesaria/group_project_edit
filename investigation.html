@@ -11,7 +11,7 @@
 
 <meta name="author" content="by Team-Name: Hannah, Hannah, Rianna" />
 
-<meta name="date" content="2026-11-24" />
+<meta name="date" content="2026-11-26" />
 
 <title>IDS investigation worksheet</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">IDS investigation worksheet</h1>
 <h4 class="author">by Team-Name: Hannah, Hannah, Rianna</h4>
-<h4 class="date">2026-11-24</h4>
+<h4 class="date">2026-11-26</h4>
 
 </div>
 
@@ -1267,6 +1267,38 @@ ggplot(neighbourhood_price_per_sq_ft, aes(x = reorder(Neighborhood, median_price
 ##  9 CollgCr      8                6
 ## 10 CollgCr      9                1
 ## # ℹ 26 more rows</code></pre>
+<pre class="r"><code>linear_reg() %&gt;%
+  set_engine(&quot;lm&quot;) %&gt;%
+  fit(price_k ~ area + Neighborhood + Overall.Qual, data = central_data_with_eras) %&gt;%
+  tidy()</code></pre>
+<pre><code>## # A tibble: 16 × 5
+##    term                estimate std.error statistic  p.value
+##    &lt;chr&gt;                  &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+##  1 (Intercept)         -22.2     22.3        -0.993 3.23e- 1
+##  2 area                  0.0444   0.00503     8.82  9.16e-15
+##  3 NeighborhoodCollgCr  42.7      7.14        5.97  2.31e- 8
+##  4 NeighborhoodCrawfor  38.6      8.76        4.41  2.24e- 5
+##  5 NeighborhoodEdwards   7.53     7.14        1.05  2.94e- 1
+##  6 NeighborhoodIDOTRR   -2.22     7.97       -0.278 7.81e- 1
+##  7 NeighborhoodOldTown  -1.95     7.12       -0.274 7.84e- 1
+##  8 NeighborhoodSWISU    -3.54    11.1        -0.319 7.50e- 1
+##  9 Overall.Qual3        60.6     23.2         2.61  1.03e- 2
+## 10 Overall.Qual4        67.8     21.9         3.10  2.40e- 3
+## 11 Overall.Qual5        81.6     21.6         3.77  2.49e- 4
+## 12 Overall.Qual6        92.2     22.1         4.17  5.79e- 5
+## 13 Overall.Qual7       105.      22.4         4.70  6.82e- 6
+## 14 Overall.Qual8       146.      23.3         6.25  6.16e- 9
+## 15 Overall.Qual9       235.      30.9         7.62  5.77e-12
+## 16 Overall.Qual10      339.      32.8        10.3   2.09e-18</code></pre>
+<pre class="r"><code>linear_reg() %&gt;%
+  set_engine(&quot;lm&quot;) %&gt;%
+  fit(price_k ~ area, data = central_data_with_eras) %&gt;%
+  tidy()</code></pre>
+<pre><code>## # A tibble: 2 × 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)  27.4     11.6          2.36 1.97e- 2
+## 2 area          0.0854   0.00788     10.8  3.76e-20</code></pre>
 
 
 

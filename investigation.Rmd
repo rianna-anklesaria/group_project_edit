@@ -214,6 +214,15 @@ central_data_with_eras %>%
   group_by(Neighborhood) %>%
   count(Overall.Qual)
     
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(price_k ~ area + Neighborhood + Overall.Qual, data = central_data_with_eras) %>%
+  tidy()
+
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(price_k ~ area, data = central_data_with_eras) %>%
+  tidy()
 ```
 
 
