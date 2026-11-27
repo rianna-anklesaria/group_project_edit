@@ -346,7 +346,8 @@ Make sure to hide your code with  `echo = FALSE` unless the point you are trying
 
 ## References
 
-List any references here. You should, at a minimum, list your data source.
+Primary Source: De Cock, Dean, "Ames, Iowa: Alternative to the Boston housing data as an end of semester regression project." Journal of Statistics Education 19.3 (2011), Accessed 30th October, 2026, from https://www.openintro.org/data/index.php?data=ames
 
-Key which describes the data & ethics info = https://jse.amstat.org/v19n3/decock/DataDocumentation.txt
-data = House prices data Iowa = https://www.openintro.org/data/csv/ames.csv
+Secondary Source: 1) Ames, Iowa Assessor’s Office, “Ames Iowa: Alternative to the Boston Housing Data Set, Ames”, Accessed 30th October, 2026, from https://jse.amstat.org/v19n3/decock/DataDocumentation.txt
+					        2) Block One Ames, “Things to do in Ames”, Accessed: 30th October, 2026, from https://blockoneames.com/neighborhood/
+
