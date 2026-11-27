@@ -81,7 +81,7 @@ central_data_with_eras <- central_data_with_eras %>%
 
 central_data_with_eras %>%
   ggplot(aes(x = era_built, y = price_k)) +
-  geom_boxplot() +
+  geom_boxplot(fill = "forestgreen") +
   labs(title = "Price of Houses by Era Built",
        x = "Era Built",
        y = "Price in Thousands $") +
@@ -90,7 +90,7 @@ central_data_with_eras %>%
 
 central_data_with_eras %>%
   ggplot(aes(x = era_remodelled, y = price_k)) +
-  geom_boxplot() +
+  geom_boxplot(fill = "pink") +
   labs(title = "Price of Houses by Era Remodelled",
        x = "Era Remodelled",
        y = "Price in Thousands $") +
@@ -120,7 +120,7 @@ central_data_with_eras %>%
 
 central_data_with_eras %>%
      ggplot(aes(x = Neighborhood, y = price_k)) +
-     geom_boxplot() +
+     geom_boxplot(fill = "skyblue") +
  labs(title = "Price of Houses by Neighbourhood",
         x = "Neighbourhood",
         y = "Price in Thousands $") +
@@ -143,7 +143,7 @@ central_data_with_eras$Overall.Qual <- factor(central_data_with_eras$Overall.Qua
 
 central_data_with_eras %>% 
   ggplot(aes(x = Overall.Qual, y = price_k)) +
-  geom_boxplot() +
+  geom_boxplot(fill = "turquoise") +
   labs(
     title = "House Price by Overall Quality of Build", 
     x = "Overall Quality Rating", 
@@ -155,7 +155,7 @@ central_data_with_eras$Overall.Cond <- as.character(central_data_with_eras$Overa
 
 central_data_with_eras %>% 
   ggplot(aes(x = Overall.Cond, y = price_k)) +
-  geom_boxplot() +
+  geom_boxplot(fill = "lavender") +
   labs(
     title = "House Price by Overall Condition of Maintainance", 
     x = "Overall Condition Rating",
