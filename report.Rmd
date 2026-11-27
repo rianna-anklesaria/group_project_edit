@@ -282,6 +282,8 @@ linear_reg() %>%
 
 Prices of Houses with Repect to Basement Size:
 
+Another possible explanatory variable could be the size of the basement. There is a positive correlation shown through this visualisation however, this should be considered alongside total area of the house and therefore is likley not a highly influential variable.
+
 ```{r echo=FALSE}
 central_data_with_eras %>%
   ggplot(aes(x = Total.Bsmt.SF, y = price_k, colour = area)) +
