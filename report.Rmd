@@ -48,37 +48,12 @@ central_data_with_eras <- central_area_data %>%
       Year.Remod.Add >= 2000 ~ "2000s"
     )
   )
-
-view(central_data_with_eras)
-
 central_data_with_eras <- central_data_with_eras %>%
   mutate(price_k = price/1000)
+central_data_with_eras$Overall.Qual <- as.character(central_data_with_eras$Overall.Qual) 
+central_data_with_eras$Overall.Qual <- factor(central_data_with_eras$Overall.Qual, levels = c("2", "3", "4", "5", "6", "7", "8", "9", "10"))
+central_data_with_eras$Overall.Cond <- as.character(central_data_with_eras$Overall.Cond) 
 
-central_data_with_eras %>%
-  ggplot(aes(x = era_built, y = price_k)) +
-  geom_boxplot() +
-  labs(title = "Price of Houses by Era Built",
-       x = "Era Built",
-       y = "Price in Thousands $") +
-  theme_minimal()
-
-central_data_with_eras %>%
-  ggplot(aes(x = era_remodelled, y = price_k)) +
-  geom_boxplot() +
-  labs(title = "Price of Houses by Era Remodelled",
-       x = "Era Remodelled",
-       y = "Price in Thousands $") +
-  theme_minimal()
-
-central_data_with_eras %>%
-  ggplot(aes(x = area, y = price_k)) +
-  geom_point(aes(colour = House.Style)) +
-  geom_smooth(method = "lm", se = FALSE, colour = "black") +
-  labs(title = "House Prices by Area",
-       subtitle = "by Style",
-       x = "Area in square feet",
-       y = "Price in Thousands $") +
-  theme_minimal()
   
 
 
@@ -125,35 +100,190 @@ We stared with visual analyses of how the Prices of Houses in Amez are  affected
 Graph 1) Price of houses by Era Built:
 The median/ average of victorian & gilded age is the lowest which means the average prices of houses in the Victorian and Gilded age is lower than any other Era but only marginally in comparison to interwar and post war but more prominently in comparison to 20th century & modern. Victorian & gilded age have more significant extreme price variety, while post war has least extreme price variety, 20th century & modern has overall highest average, average across all eras is less than/ equal to $200,000, 20th century & modern has no extremes.
 ```{r}
-
+central_data_with_eras %>%
+  ggplot(aes(x = era_built, y = price_k)) +
+  geom_boxplot(fill = "forestgreen") +
+  labs(title = "Price of Houses by Era Built",
+       x = "Era Built",
+       y = "Price in Thousands $") +
+  theme_minimal() +
+  theme(legend.position = "none")
 ```
 
 Graph 2) Prices of houses by Era Remodelled:
 We can see an increasing relationship as median price increases as move closer to recent remodelling.
 The 1980s&1990s and 2000s have no lower extremes, but high ones (1980s and 1990s has highest extreme).
+```{r}
+central_data_with_eras %>%
+  ggplot(aes(x = era_remodelled, y = price_k)) +
+  geom_boxplot(fill = "pink") +
+  labs(title = "Price of Houses by Era Remodelled",
+       x = "Era Remodelled",
+       y = "Price in Thousands $") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
 
 Graph 3 and 4) House Prices by Area(Square Feet):
 The graph shows a positive relationship between house area and sale price, although the considerable spread around the line of best fit suggests that area is not the sole determinant of price. Houses with fewer stories tend to cluster below the line, while some houses with more stories achieve higher prices despite having similar floor areas. 
+```{r}
+central_data_with_eras %>%
+  ggplot(aes(x = area, y = price_k)) +
+  geom_point(aes(colour = House.Style)) +
+  geom_smooth(method = "lm", se = FALSE, colour = "black") +
+  labs(title = "House Prices by Area",
+       subtitle = "by Style",
+       x = "Area in square feet",
+       y = "Price in Thousands $") +
+  theme_minimal()
+
+```
+
 
  5) Prices of houses by neighbourhood :
 From thew graph we can see Crawford has the highest average house price, whereas Old Town has the lowest. Edwards, IDOTRR, SWISU and Brookside have relatively similar average prices, clustering within the $100,000–$150,000 range. Interestingly, Old Town also displays the widest range of prices, containing both the highest and lowest extreme values, suggesting considerable variation in house prices within the neighbourhood.
+```{r}
+central_data_with_eras %>%
+     ggplot(aes(x = Neighborhood, y = price_k)) +
+     geom_boxplot(fill = "skyblue") +
+ labs(title = "Price of Houses by Neighbourhood",
+        x = "Neighbourhood",
+        y = "Price in Thousands $") +
+   theme_minimal()
+```
+
 
 6) Point + segment graph: 
 Shows how much buyers pay for houses purely based on sq feet area in each neighbourhood in central Ames, shows cheapest vs most exp neighbourhood per sq ft neighbourhoods such as College Creek and Crawford both remain near the top in both 1st neighbourhood boxplot AND new graph here, meaning the neighbourhood alone carries significant weight in price. detrminants as buyers pay more for these neighbourhoods even for same area. Neighbourhoods which fell in point segment graph in comparison to initial single price boxplot then these houses only appeared to be priced higher because they had a bigger area (bigger size in gen), instead of the neighbourhood alone adding to price. Neighbourhoods that increased in point segment graph ie Berkside or SWISU) means even though total house prices appear moderate, buyers pay a relatively high rate per square ft (seems that because small area houses nearby central Ames have a higher sale price per square ft area). 
+```{r}
+central_data_with_eras %>%
+    ggplot(aes(x = area, y = price_k, colour = Neighborhood)) +
+    geom_point(size = 0.5) +
+    geom_smooth(method = "lm", se = FALSE, linewidth = 0.5) +
+    labs(title = "House Prices by Size",
+         subtitle = "by Neighborhood",
+         x = "Area in square feet",
+         y = "Price in Thousands $") +
+    facet_wrap(~Neighborhood) +
+    theme_minimal() +
+    theme(legend.position = "none") 
+ggplot(neighbourhood_price_per_sq_ft, aes(x = reorder(Neighborhood, median_price_per_sq_ft), y = median_price_per_sq_ft)) +
+  geom_segment(aes(xend = Neighborhood, y = 0, yend = median_price_per_sq_ft), colour = "orange") +
+  geom_point(size = 4, colour = "orange") +
+  labs(
+    title = "Price buyers pay per square foot of area", 
+    subtitle = "Median price per square ft by Neighbourhood",
+    x = "Neighbourhood",
+    y = "Median price ($) per square ft(area)"
+  ) +
+  theme_minimal()
+```
+
 
 7) House Price by Quality of Build and Condition of Maintenance Graphs: 
 There is a clear positive correlation between a house’s overall quality rating and its selling price. Properties rated between 3 and 6 (out of 10) have relatively similar median prices and data distributions. However, those rated above 7 generally sell for considerably more. Houses rated 10 sold for $475,000, compared with just $12,000 for those rated 2. The relationship is less apparent when considering the house’s overall condition at the time of sale. Median selling prices remain relatively similar across all condition ratings, while the interquartile ranges are considerably wider.
+```{r}
+
+central_data_with_eras %>% 
+  ggplot(aes(x = Overall.Qual, y = price_k)) +
+  geom_boxplot(fill = "turquoise") +
+  labs(
+    title = "House Price by Overall Quality of Build", 
+    x = "Overall Quality Rating", 
+    y = "Price in Thousands $"
+  ) +
+  theme_minimal()
+central_data_with_eras %>% 
+  ggplot(aes(x = Overall.Cond, y = price_k)) +
+  geom_boxplot(fill = "lavender") +
+  labs(
+    title = "House Price by Overall Condition of Maintainance", 
+    x = "Overall Condition Rating",
+    y = "Price in Thousands $"
+  ) + 
+  theme_minimal()
+
+central_data_with_eras %>%
+  ggplot(aes(x = Overall.Qual, y = price_k, colour = Overall.Cond)) +
+  geom_point(alpha = 0.5) +
+  labs(
+    title = "Relationship Between House Prices, Quality and Condition",
+    x = "Overall Quality Rating",
+    y = "Price in Thousands $",
+    colour = "Overall Condition Rating"
+  ) +
+  theme_minimal()
+```
+
 
 8) Residuals plot graph:
 The graph shows that the model of house prices versus area does have a relatively linear relationship. The points are fairly randomly scattered around the zero line suggesting other patterns are unlikely to be present and, if it was the focus of a predictive question, it is likely that the model could fairly accurately predict the price of a house based on its area in square footage. 
+```{r}
+price_fit <- lm(price_k ~ area, data = central_data_with_eras)
+
+augmented_data <- augment(price_fit)
+ggplot(augmented_data, aes(x = .fitted, y = .resid)) +
+  geom_point() + 
+  geom_hline(yintercept = 0, linetype = "dashed", colour = "red") +
+  labs(
+    title = "Residual plot",
+    x = "Predicted price against Area",
+    y = "Residuals"
+  ) +
+  theme_minimal()
+central_data_with_eras <- central_data_with_eras %>% 
+  mutate(price_per_sq_ft = price_k / area)
+neighbourhood_price_per_sq_ft <- central_data_with_eras %>%
+  group_by(Neighborhood) %>%
+  summarise(median_price_per_sq_ft = median(price_per_sq_ft, na.rm = TRUE))
+```
+
 
 9) House Prices By quality by neighbourhood graph:
-A clear relationship is exemplified in this graph as two houses in the same neighbourhood of Old Town, with different ratings are sold for very different prices. However, the hypothesis can still be supported by the evidence within the medium ratings as Crawford and college creek continue to show higher prices than other neighbourhoods where houses had the same quality rating, yet this trend is less clear than the overall correlation between quality and price. 
+A clear relationship is exemplified in this graph as two houses in the same neighbourhood of Old Town, with different ratings are sold for very different prices. However, the hypothesis can still be supported by the evidence within the medium ratings as Crawford and college creek continue to show higher prices than other neighbourhoods where houses had the same quality rating, yet this trend is less clear than the overall correlation between quality and price.
+```{r}
+central_data_with_eras %>%
+    ggplot(aes(x = Overall.Qual, y = price_k, colour = Neighborhood)) +
+    geom_boxplot() +
+    labs(title = "House Prices by Quality",
+         subtitle = "by Neighborhood",
+         x = "Overall Quality Rating",
+         y = "Price in Thousands $") +
+    theme_minimal() 
+```
+
+
 
 Linear regression model
 
 A multiple linear regression model has been selected as we aim to analyse both categorical and continuous variables and their inferential relationships.
 The Positive coefficient of the area estimate suggests that house prices on average are higher for houses with a larger area. Since the P-value for area is very small, this suggests a statistically significant result and that the area is an influential variable on house prices. Birkside has been set as the reference neighbourhood. The large positive coefficients for college creek and Crawford neighbourhoods suggests they have a significantly higher predicted house prices holding area and quality constant. This reinforces the previous claims that these neighbourhoods drive up prices regardless of other factors. However, the other neighbourhoods have higher p-values and coefficients with lower magnitudes, suggesting less statistically significant results. So, for other neighbourhoods in the central area, area and quality are likely more significant. All of the quality coefficients are large and positive, clearly showing that price increases as quality rating improves. The smaller p-values as quality rises suggests increasing statistical significance holding area and neighbourhood constant, reinforcing the highly influential nature of quality in determining house prices.
+```{r}
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(price_k ~ area + Neighborhood + Overall.Qual, data = central_data_with_eras) %>%
+  tidy()
+
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(price_k ~ area, data = central_data_with_eras) %>%
+  tidy()
+```
+
+
+Prices of Houses with Repect to Basement Size:
+
+```{r}
+central_data_with_eras %>%
+  ggplot(aes(x = Total.Bsmt.SF, y = price_k, colour = area)) +
+  geom_point() +
+  labs(
+    title = "Price of Houses By Basement size",
+    x = "Total Basement Area (square ft)",
+    y = "Price in Thousands $", 
+    colour = "Total Area of House") +
+  theme_minimal()
+```
 
 The initial findings suggest that neighbourhood has a considerable influence on house sale prices in Ames, although it is not the only determining factor. Crawford has the highest average sale price, while Old Town has the lowest. College Creek also appears to command relatively higher prices compared with neighbourhoods such as Edwards and Brookside. However, the considerable variation in prices within individual neighbourhoods suggests that other characteristics also contribute to property values.
 
